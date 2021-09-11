@@ -1,5 +1,3 @@
-% h = zeros(4)
-
 for i= 1:4
     for j=1:3
        A(i, j) = i+j

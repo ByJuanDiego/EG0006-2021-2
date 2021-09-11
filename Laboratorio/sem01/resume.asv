@@ -70,7 +70,7 @@ disp(C)
         g h i;
     ]
     
-    sea B = (adjunta de A), entonces:
+    sea B = A' (adjunta de A), entonces:
     B(1,1) = +[(e*i)-(h*f)]
     B(1,2) = -[(d*i)-(g*f)]
     B(1,3) = +[(d*h)-(g*e)]
@@ -98,7 +98,7 @@ disp(C)
 %{
     Transpuesta de una matriz:
     Es una matriz que tiene como columnas las filas de la matriz original.
-    sea A una matriz de orden (MxN), entonces la transpuesta (A') es de orden (NxM)
+    sea A una matriz de orden (MxN), entonces la transpuesta es de orden (NxM)
 
     A = [
         a b c;
