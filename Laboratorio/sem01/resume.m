@@ -23,20 +23,20 @@ disp(C)
 %{  
     Producto de matrices cuadradas:
 
-    m1 = [
+    A = [
         a b;
         c d;
     ]
-    m2 = [
+    B = [
         e f;
         g h;
     ]
 
-    m3 = m1*m2
-    m3(1,1) = (a*e) + (b*g)
-    m3(1,2) = (a*f) + (b*g)
-    m3(2,1) = (c*e) + (d*g)
-    m3(2,2) = (c*f) + (d*h)
+    C = m1*m2
+    C(1,1) = (a*e) + (b*g)
+    C(1,2) = (a*f) + (b*g)
+    C(2,1) = (c*e) + (d*g)
+    C(2,2) = (c*f) + (d*h)
 
 %}
 
@@ -63,23 +63,23 @@ disp(C)
     Para que una matriz tenga adjunta, debe de ser NxN
 
     Adjunta de una 3x3
-    m1 = [
+    A = [
         a b c;
         d e f;
         g h i;
     ]
     
-    m2(1,1) = +[(e*i)-(h*f)]
-    m2(1,2) = -[(d*i)-(g*f)]
-    m2(1,3) = +[(d*h)-(g*e)]
+    B(1,1) = +[(e*i)-(h*f)]
+    B(1,2) = -[(d*i)-(g*f)]
+    B(1,3) = +[(d*h)-(g*e)]
 
-    m2(2,1) = -[(b*i)-(h*c)]
-    m2(2,2) = +[(a*i)-(g*c)]
-    m2(2,3) = -[(a*h)-(g*b)]
+    B(2,1) = -[(b*i)-(h*c)]
+    B(2,2) = +[(a*i)-(g*c)]
+    B(2,3) = -[(a*h)-(g*b)]
 
-    m2(3,1) = +[(b*f)-(e*c)]
-    m2(3,2) = -[(a*f)-(d*c)]
-    m2(3,3) = +[(a*e)-(d*b)]
+    B(3,1) = +[(b*f)-(e*c)]
+    B(3,2) = -[(a*f)-(d*c)]
+    B(3,3) = +[(a*e)-(d*b)]
 
 %}
 
@@ -97,13 +97,13 @@ disp(C)
     Transpuesta de una matriz:
     Es una matriz que tiene como columnas las filas de la matriz original
     
-    m1 = [
+    A = [
         a b c;
         d e f;
         g h i
     ]
     
-    m1' = [
+    A' = [
         a d g;
         b e h;
         c f i
