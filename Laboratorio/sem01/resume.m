@@ -31,6 +31,7 @@ B = [
     7 8
 ]; % matriz 2x2
 C = A*B;
+fprintf("A*B:\n")
 disp(C)
 
 
@@ -93,6 +94,7 @@ A = [
 ];
 
 B = A';
+fprintf("A':\n")
 disp(B)
 
 
@@ -104,6 +106,15 @@ disp(B)
     Determinante de una matriz:
     Para que una matriz tenga determiante, esta debe ser de (NxN).
     
+    Determinante de una 2x2:
+
+    A = [
+        a b;
+        c d
+    ]
+    det(A)= (a*d)-(c*d)
+    
+
     Determinante de una 3x3:
 
     A = [
@@ -111,10 +122,12 @@ disp(B)
         d e f;
         g h i
     ]
-
     det(A) = [(a*e*i)+(d*h*c)+(g*b*f)] - [(c*e*g)+(f*h*a)+(i*b*d)]
     
 %}
+
+A = ones(3); % crea una matriz 3x3 llena de 1's
+fprintf("det(A) = %d\n\n", det(A))
 
 
 
@@ -125,3 +138,11 @@ disp(B)
     Inversa de una matriz:
     inv(A) = adj(A')/det(A)
 %}
+A = [
+    1 2 3;
+    3 2 3;
+    3 3 3
+];
+
+fprintf("inv(A):\n")
+disp(inv(A))
