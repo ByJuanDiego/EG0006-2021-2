@@ -172,6 +172,7 @@ disp(inv(A))
     linsolve(A, b)
     A \ b
     inv(A)*b
+
 %}
 
 
