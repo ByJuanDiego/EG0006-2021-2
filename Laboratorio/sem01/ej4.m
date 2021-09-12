@@ -11,5 +11,3 @@ q = [230; 180; 80; 160];   %  También q=[230 180 80 160]'
 traza_P=trace(P);
 
 fprintf('\n\t La traza de la matriz P es: %f\n',traza_P)
-m = [1 2; 3 4]
-m1 = inv(m)
