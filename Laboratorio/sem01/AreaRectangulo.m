@@ -1,4 +1,4 @@
-function [Area] = area_rectangulo(B, A) 
+function [Area] = AreaRectangulo(B, A) 
     %{
       Esta función calcula el área de un rectángulo
     
