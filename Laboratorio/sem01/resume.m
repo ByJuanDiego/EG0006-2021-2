@@ -61,6 +61,16 @@ disp(C)
     ]
     det(A) = [(a*e*i)+(d*h*c)+(g*b*f)] - [(c*e*g)+(f*h*a)+(i*b*d)]
     
+    Propiedades de determinantes:
+
+    Si el determinante de una matriz es 0, esa matriz no tiene inversa
+
+    det(A*B) = det(A)*det(B)
+    det(A') = det(A)
+    det(inv(A)) = 1/det(A)
+    Sea A una matriz NxN triangular inferior o superior:
+    det(A) = A(1,1)*A(2,2)*A(3,3)*...*A(N,N)
+
 %}
 
 A = ones(3); % crea una matriz 3x3 llena de 1's
