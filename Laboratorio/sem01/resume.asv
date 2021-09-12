@@ -147,26 +147,6 @@ fprintf("inv(A):\n")
 disp(inv(A))
 
 %{
-    operadores principales:
-
-    A / B = A * inv(B)
-    A \ B = inv(A) * B
-
-
-    funciones principales matrices:
-
-    zeros(3, 5)
-    ones(3, 5)
-    eye(5) genera una matriz identidad 5x5 (diagonal llena de 1's)
-    trace(A) -> Suma de los elementos de la diagonal de una matriz (traza)
-    rank(A) rango de la matriz A (columnas)
-    [n, m] = size(A)
+    A = eye(5) genera una matriz identidad 5x5 (diagonal llena de 1's)
     
-    funciones principales sistemas de ecuaciones lineales:
-    
-    linsolve(A, b)
-    A \ b
-    inv(A)*b
-
 %}
-
