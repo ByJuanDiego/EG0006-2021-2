@@ -93,9 +93,8 @@ A = [
     4 5 6;
 ];
 
-B = A';
 fprintf("A':\n")
-disp(B)
+disp(A')
 
 
 
