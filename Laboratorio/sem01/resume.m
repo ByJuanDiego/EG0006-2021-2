@@ -135,7 +135,18 @@ disp(A')
 %{ 
     -----------------------------------------------------------------------
     Inversa de una matriz:
+    
     inv(A) = adj(A')/det(A)
+
+    Definición:
+    inv(A)*A = I; donde I es una matriz identidad
+    
+    Propiedades de inversas:
+    inv(A*B) = inv(A)*inv(B)
+    inv(A') = inv(A)'
+    inv(inv(A)) = A
+    inv(α*A) = (1/α)*inv(A); α≠0
+    
 %}
 A = [
     1 2 3;
