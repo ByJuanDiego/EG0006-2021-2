@@ -112,7 +112,7 @@ disp(B)
         g h i
     ]
 
-    det(A) = [(a*e*i)+(d*h*c)+(g*b*f)] - [(c*e*g)+(f*h*a)+(i*b*d)]
+    det(A) = [(a*e*i)+(d*h*c)+(g*b*f)] - [()+()+()]
     
 %}
 
