@@ -4,7 +4,7 @@ function [] = RoucheFrobenius(M, v)
     Esta función verifica el teorema de Rouche Frobenius.
 
     "Si el rango de la matriz original es igual al de la matriz ampliada, e
-    igual al de la dimensión de la matriz, entonces tiene única solución, y
+    igual al número de columnas de la matriz, entonces tiene única solución, y
     es compatible determinado.
 
     Caso contrario, si el rango de la matriz original es igual al de la
@@ -27,7 +27,7 @@ r2 = rank([M v]);
 
 if (r1 ~= r2)
     fprintf("El sistema no tiene solución\n")
-elseif (r1 == n)
+elseif (r1 == m)
     fprintf("El sistema tiene solución única\n")
 else
     fprintf("El sistema tiene infinitas soluciones\n")

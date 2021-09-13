@@ -17,6 +17,7 @@
             
             fi -> λfi; λ!=0
 
+    rref() -> calcula la forma escalonada de una matriz.
 %}
 
 
