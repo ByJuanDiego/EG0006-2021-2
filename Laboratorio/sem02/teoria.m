@@ -11,13 +11,16 @@
     2. Sumarle la fila jésima por el multiplicador a cada elemento de la
        fila iésima
             
-            fi -> f(i) + λ*f(j); λ = f(i,k)/f(j,j)
+            fi -> f(i) + λ*f(j); λ = -[f(i,k)/f(j,j)]
 
     3. Multiplicar la fila iésima por un multiplicador
             
             fi -> λfi; λ!=0
 
 %}
+
+
+
 
 
 %{
