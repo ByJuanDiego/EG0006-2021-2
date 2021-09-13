@@ -63,11 +63,9 @@ n = sum(sum(ContactosIndirectos));
 fprintf("La cantidad de contactos indirectos entre el grupo 1 y el grupo b son: %d\n\n", n)
 fprintf("Tabla de contactos indirectos:\n\n")
 disp(ContactosIndirectos)
-
 for i = 1:4
     for j = 1:5
-        fprintf("La persona nº%d del grupo 1 tuvo ", i);
-        fprintf("%d contactos indirectos con ", ContactosIndirectos(i, j));
-        fprintf("con la persona nº%d del grupo B\n", j);
+        fprintf("La persona nº%d del grupo 1 tuvo", i);
+        fprintf("La persona nº%d del grupo 1 tuvo", i);
     end
 end
