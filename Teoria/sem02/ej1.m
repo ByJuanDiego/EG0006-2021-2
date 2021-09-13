@@ -52,11 +52,14 @@ B = [
         C(i,j) = A(i,1)*B(1,j) + A(i,2)*B(2,j) + ... + A(i,n)*B(n,j)
 
     Por cada individuo (columna de contagios) del grupo B, se multiplica
-    por la fila j del grupo A
+    por la fila j del grupo A, y al sumarlo de halla el número de contagios
+    indirectos
 %}
 
 
 
 ContactosIndirectos = A*B;
-n = sum(sum(ContactosIndirectos))
-fprintf("La cantidad de contactos indirectos entre el grupo 1 y el grupo b son: " + num2str(n) + "\n")
+n = sum(sum(ContactosIndirectos));
+fprintf("La cantidad de contactos indirectos entre el grupo 1 y el grupo b son: %d\n\n", n)
+fprintf("Tabla de contactos indirectos:\n\n")
+disp(ContactosIndirectos)
