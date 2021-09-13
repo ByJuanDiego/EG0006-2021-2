@@ -39,3 +39,24 @@ B = [
     0 0 0 1 0;
     0 0 1 0 0
 ]; % dimensiones 6x5
+
+%{
+    
+    Para calcular la cantidad de contactos indirectos:
+    C = A*B.
+
+    Justificación:
+
+    Para hallar el elemento (i,j) de la matriz C:
+
+        C(i,j) = A(i,1)*B(1,j) + A(i,2)*B(2,j) + ... + A(i,n)*B(n,j)
+
+    Por cada individuo (columna de contagios) del grupo B, se multiplica
+    por la fila j del grupo A
+%}
+
+
+
+ContactosIndirectos = A*B;
+n = sum(sum(ContactosIndirectos))
+fprintf("La cantidad de contactos indirectos entre el grupo 1 y el grupo b son: " + num2str(n) + "\n")
