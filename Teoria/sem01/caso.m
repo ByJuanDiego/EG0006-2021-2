@@ -9,6 +9,7 @@ A = [
     0 0 0 1 1 0;
     1 0 0 0 0 1
 ]; % dimensiones 4x6
+
 %{
     Cada columna representa una persona del grupo A.
     
@@ -56,8 +57,6 @@ B = [
     indirectos
 %}
 
-
-
 ContactosIndirectos = A*B;
 n = sum(sum(ContactosIndirectos));
 fprintf("La cantidad de contactos indirectos entre el grupo 1 y el grupo b son: %d\n\n", n)
@@ -69,5 +68,6 @@ for i = 1:4
         fprintf("La persona nº%d del grupo 1 tuvo ", i);
         fprintf("%d contactos indirectos con ", ContactosIndirectos(i, j));
         fprintf("con la persona nº%d del grupo B\n", j);
+        
     end
 end
