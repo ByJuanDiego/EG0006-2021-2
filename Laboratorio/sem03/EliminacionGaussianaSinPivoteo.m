@@ -15,7 +15,7 @@ if RoucheFrobenius(A, b)
         
         for j=k+1:n
             m = Aa(j,k)/pivo;
-            Aa(j,k:n) = Aa(j,k:n) - m*Aa(k,k:n);
+            Aa(j,:) = Aa(j,:) - m*Aa(k,:);
         end
         
     end
