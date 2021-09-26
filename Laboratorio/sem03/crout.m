@@ -1,7 +1,9 @@
 function[L, U]= crout(A)
+
 % Esta función calcula la factorización LU de A
 % mediante el método de Crout sin pivoteo. 
 %  Inicialización
+
 [n,m] = size(A);
 U = eye(n,n);
 %  Proceso de EG - haciendo las modificaciones sobre la A
@@ -13,4 +15,6 @@ for k = 1:n - 1
     end
 end
 L = tril(A);  % tril(A) es la matriz triangular inferior de la A
+% triu(A) es la matriz trigular superior de A
+
 end

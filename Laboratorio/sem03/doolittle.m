@@ -8,7 +8,7 @@ flag = 0
 L = eye(n,n)
 for k=1:n-1
     pivo = A(k,k);
-    if pivo == 0 then 
+    if pivo == 0
         printf('\n No se puede continuar el proceso porque se consiguió un pivote cero\n')
         flag = 1
         break

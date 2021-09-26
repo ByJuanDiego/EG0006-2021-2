@@ -33,5 +33,25 @@ function [booleano] = RoucheFrobenius(A,b)
         booleano = false;
     end
     
+    %{
+    function [rpta] = RoucheFrobenius(A,b)
+    [n,~] = size(A);
+    rA = rank(A);
+    rAB = rank([A b]);
+    if (rA ~= rAB)
+        fprintf("El sistema no tiene solucion. ");
+    elseif (rA == n)
+        fprintf("El sistema tiene solucion unica \n");
+        rpta=linsolve(A,b);
+        [m] = size(rpta);
+        for i = 1:m
+            fprintf(' x%d = %.2f\n', i, rpta(i));
+        end
+    else
+        fprintf("El sistema tiene infinitas soluciones");
+    end
+    end
+    %}
+    
 end
 
