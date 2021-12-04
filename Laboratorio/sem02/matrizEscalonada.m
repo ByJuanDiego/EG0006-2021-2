@@ -8,4 +8,3 @@ P = [
 ];
 
 x = rref(P) % escalonada reducida
-
