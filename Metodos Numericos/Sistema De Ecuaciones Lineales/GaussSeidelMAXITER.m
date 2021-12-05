@@ -10,15 +10,20 @@ function [z, x] = GaussSeidelMAXITER(A, b, x0, maxIter)
     
     if MatrizDominante(A) || RadioEspectral(Tgs)
         
-        z = [0 x0' nan]; 
+        fprintf("\n    i         error     \t<xi>\n")
         
+        z = [0 nan x0']; 
+        
+
         for k = 1:maxIter
             xi = Tgs * x0 + cgs;
+
             error = norm(xi - x0)/norm(xi);
-            z = [z; k xi' error]; %#ok<AGROW> 
+            z = [z; k error xi']; %#ok<AGROW> 
             x0 = xi;
         end
         
+        disp(z)
         x = xi;
     
     else

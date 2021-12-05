@@ -10,18 +10,20 @@ function [z, x] = GaussSeidelTOL(A, b, x0, Tol)
     
     if MatrizDominante(A) || RadioEspectral(Tgs)
         
+        fprintf("\n    i         error     \t<xi>\n")
         i = 0;
-        z = [i x0' nan];
+        z = [i nan x0'];
         error = 1;
         
         while error > Tol
             xi = Tgs * x0 + cgs;
             i = i + 1;
             error = norm(xi - x0)/norm(xi);
-            z = [z; i xi' error]; %#ok<AGROW> 
+            z = [z; i error xi']; %#ok<AGROW> 
             x0 = xi;
         end
         
+        disp(z);
         x = xi;
     
     else
