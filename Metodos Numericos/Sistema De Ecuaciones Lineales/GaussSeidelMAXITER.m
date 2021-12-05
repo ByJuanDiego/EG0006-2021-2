@@ -1,6 +1,5 @@
 function [z, x] = GaussSeidelMAXITER(A, b, x0, maxIter)
     
-    %GAUSSSEIDEL Metodo de Gauss-Seidel
     D = diag(diag(A));
     L = -tril(A,-1);
     U = -triu(A, 1);

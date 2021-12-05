@@ -1,6 +1,5 @@
 function [z, x] = GaussSeidelTOL(A, b, x0, Tol)
     
-    %GAUSSSEIDEL Metodo de Gauss-Seidel
     D = diag(diag(A));
     L = -tril(A,-1);
     U = -triu(A, 1);

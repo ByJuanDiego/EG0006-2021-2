@@ -1,6 +1,5 @@
 function [z, x] = JacobiTOL(A, b, x0, Tol)
     
-    %JACOBI Metodo de Jacobi
     D = diag(diag(A));
     L = -tril(A,-1);
     U = -triu(A, 1);

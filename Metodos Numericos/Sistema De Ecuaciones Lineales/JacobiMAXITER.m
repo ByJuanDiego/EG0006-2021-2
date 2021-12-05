@@ -1,6 +1,5 @@
 function [z, x] = JacobiMAXITER(A, b, x0, maxIter)
     
-    %JACOBI Metodo de Jacobi
     D = diag(diag(A));
     L = -tril(A,-1);
     U = -triu(A, 1);
