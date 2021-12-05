@@ -10,11 +10,12 @@ function [z, x] = JacobiMAXITER(A, b, x0, maxIter)
     
     if MatrizDominante(A) || RadioEspectral(Tj)
         
-        z = [x0']; %#ok<NBRAK>
+        z = [0 x0' nan];
         
         for k = 1:maxIter
             xi = Tj * x0 + cj;
-            z = [z; xi']; %#ok<AGROW> 
+            error = norm(xi - x0)/norm(xi);
+            z = [z; k xi' error]; %#ok<AGROW> 
             x0 = xi;
         end
         
