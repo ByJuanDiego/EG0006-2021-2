@@ -11,16 +11,16 @@ function [P] = PolinomioLagrange(x, y)
         
         fprintf("\n\nTérmino %d de la sumatoria\n\n\n", k-1)
         
-        fprintf('Los xi de arriba: \n');
+        fprintf('Los xi del denominador Π(x-xi): \n');
         disp(x([1:k-1,k+1:n])');
         
-        fprintf('El xk de abajo: \n');
+        fprintf('El xk del numerador Π(xk-xi): \n');
         disp(x(k));
         
-        fprintf('El producto de lo de arriba\n')
+        fprintf('La productoria del numerador\n')
         disp(vpa(poly2sym(num), 5));
         
-        fprintf('El producto de lo de abajo\n')
+        fprintf('La productoria del denominador\n')
         disp(vpa(poly2sym(den), 5));
         
         fprintf('El lagrangiano desarrollado\n')

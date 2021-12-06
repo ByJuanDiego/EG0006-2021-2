@@ -8,18 +8,18 @@ function [Q, R, x] =  QR(A, b)
     
     for k = 1:p
         
-        fprintf("\n\npaso %d\n\n\n", k)
+        fprintf("\n\n\npaso %d\n\n\n", k)
         
         Q(:,k) = A(:,k);
         
         for i = 1:k-1
             
             R(i,k) = Q(:,i)'*Q(:,k);
-            fprintf("dot(Q(%d),*A(%d)) = r(%d, %d)\n", i, k, i, k);
+            fprintf("dot(q(%d),a(%d)) = r(%d, %d)\n", i, k, i, k);
             disp(R(i,k))
             
             Q(:,k) = Q(:,k) - R(i,k)*Q(:,i);
-            fprintf("r(%d,%d)*Q(%d)\n", i, k, i);
+            fprintf("r(%d,%d)*q(%d)\n", i, k, i);
             disp(R(i,k)*Q(:,i));
             
         end
@@ -28,15 +28,13 @@ function [Q, R, x] =  QR(A, b)
         disp(Q(:,k))
         
         R(k,k) = norm(Q(:,k))';
-        fprintf("r(%d, %d)\n", k, k);
+        fprintf("r(%d,%d)\n", k, k);
         disp(R(k,k))
         
         Q(:,k) = Q(:,k)/R(k,k);
         fprintf("q(%d)\n", k);
         disp(Q(:,k))
-        
-        fprintf("\n\nse acabó el paso %d\n\n\n", k)
-        
+                
     end
     
     x = linsolve(R, Q'*b);
