@@ -1,18 +1,15 @@
-function [Its, Ets, IEts] = TrapecioSimple(f, a, b)
+function [Its, I, Error] = TrapecioSimple(f, a, b)
 
-syms x;
+fprintf("\n\n\tIts = (h/2) * (f(a) + f(b))\n");
 
 h = (b-a);
+
 Its = (h/2)*(f(a) + f(b));
 
-fprintf("\n\nFórmula: (h/2)*(f(a) + f(b))\n");
-fprintf("h = %f\n", h);
-fprintf("y(a) = %f\n", f(a));
-fprintf("y(b) = %f\n", f(b));
-
 % Para calcular el error
-IEts = int(f(x),a,b);
-IEts = round(IEts, 5);
-Ets =  round(abs(IEts-Its), 5);
+syms x;
+I = int(f(x),a,b);
+I = round(I, 5);
+Error =  round(abs(I-Its), 5);
 
 end

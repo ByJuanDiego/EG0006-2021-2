@@ -1,34 +1,19 @@
-function [Isc, Esc, IEsc] = Simpson13Compuesto(f, a, b, N)
+function [Isc, I, Error] = Simpson13Compuesto(f, a, b, N)
 
-syms x;
+fprintf("\n\n\tIsc = (h/3) * (y(a) + 4*Σ(imp) + 2*Σ(par) + y(b))\n\n")
 
-h = (b-a)/N; 
-xx = linspace(a, b, N+1);
+h = (b-a)/N;
+x = (a:h:b);
 
-ximpar = xx(2:2:N); % los impares en Matlab comienzan desde 2
-xpar = xx(3:2:N-1);
+ximp = x(2:2:N);
+xpar = x(3:2:N-1);
 
-Isc = (h/3).* (f(a) + 4.*sum(f(ximpar)) + 2.*sum(f(xpar)) + f(b));
-
-fprintf("x\n")
-disp(xx)
-
-fprintf("y\n")
-disp(f(xx))
-
-fprintf("\n\nFórmula: Isc = h/3 * (y(0) + 4*Σ(imp) + 2*Σ(par) + y(n))\n\n")
-
-fprintf("\nh = %f\n\n", h)
-
-fprintf("Sumatoria de los y(x) impares\n")
-disp(sum(f(ximpar)))
-
-fprintf("Sumatoria de los y(x) pares\n")
-disp(sum(f(xpar)))
+Isc = (h/3).* (f(a) + 4.*sum(f(ximp)) + 2.*sum(f(xpar)) + f(b));
 
 %  Para calcular el error
-IEsc = int(f(x), a, b);
-IEsc = round(IEsc, 6);
-Esc = round(abs(IEsc-Isc), 6);
+syms x;
+I = int(f(x), a, b);
+I = round(I, 6);
+Error = round(abs(I-Isc), 6);
 
 end
