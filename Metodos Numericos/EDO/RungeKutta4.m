@@ -16,7 +16,7 @@ function [z, g] = RungeKutta4(f, a, b, y0, h)
     z = [];
     
     fprintf("\nFórmula: y(i+1) = y(i) + h/6*(K1(i) + 2*K2(i) + 2*K3(i) + K4(i))\n\n")
-    fprintf("K1(i) = f(x(i)    , y(i)            )\n")
+    fprintf("K1(i) = f(x(i)    , y(i)          )\n")
     fprintf("K2(i) = f(x(i)+h/2, y(i)+K1(i)*h/2)\n")
     fprintf("K3(i) = f(x(i)+h/2, y(i)+K2(i)*h/2)\n")
     fprintf("K4(i) = f(x(i)+h  , y(i)+K3(i)*h  )\n")
