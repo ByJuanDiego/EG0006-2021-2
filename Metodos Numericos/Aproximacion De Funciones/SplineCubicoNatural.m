@@ -30,7 +30,7 @@ function [T2, T1]=SplineCubicoNatural(x, y)
         z(i,1) = "(x-" + x(i) + ")"; %#ok<AGROW> 
         
     end
-
+    
     grid on, hold off
     
     variableNames = {'i', 'x','y','h[i]', 'f[x(i),x(i+1)]', 'S"(x[i])'};
