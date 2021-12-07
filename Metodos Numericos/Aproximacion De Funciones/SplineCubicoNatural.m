@@ -6,8 +6,8 @@ function [T2, T1]=SplineCubicoNatural(x, y)
     
     diagprinc = 2*(H(1:N-1)+H(2:N));
     diagsupinf = H(2:N-1);
-	A = diag(diagprinc) + diag(diagsupinf,1) + diag(diagsupinf,-1);
-	b = 6*diff(E');
+    A = diag(diagprinc) + diag(diagsupinf,1) + diag(diagsupinf,-1);
+    b = 6*diff(E');
     g=A\b;
     g0 = 0; gn = 0;
     g = [g0 g' gn];
