@@ -1,11 +1,9 @@
 function [xyzFinal] = RotacionR3(m, xyz)
     
-    %{
-    Esta función rota el punto xyz = [x; y ; z] con respecto a los
-    ángulos indicados en m = [tetha1, tetha2, theta3]
-    con respecto al eje X, Y y Z, respectivamente.
-    Los ángulos son dados en grados.
-    %}
+    %Esta función rota el punto xyz = [x; y; z] con respecto a los
+    %ángulos indicados en m = [tetha1, tetha2, theta3]
+    %con respecto al eje X, Y y Z, respectivamente.
+    %Los ángulos son dados en grados.
     
     ang = m/180*pi; % Angulo de rotación en radianes
     
