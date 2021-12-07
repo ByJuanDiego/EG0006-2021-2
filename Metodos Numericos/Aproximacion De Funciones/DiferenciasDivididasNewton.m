@@ -11,11 +11,10 @@ function [M] = DiferenciasDivididasNewton(x,y)
         y = dy_dx;
     end
     
-    M=[x M];
+    M = [x M];
     
     variableNames = {'x','f[x(i)]','f[x(i),...,x(i+k)]'};
     T = table(M(:,1),M(:,2),M(:,3:end), VariableNames=variableNames);
-    fprintf("\n");
     disp(T);
     
 end
