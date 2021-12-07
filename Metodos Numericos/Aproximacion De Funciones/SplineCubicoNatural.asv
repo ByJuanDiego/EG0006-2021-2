@@ -4,11 +4,9 @@ function [T2, T1]=SplineCubicoNatural(x, y)
     H = diff(x);
     E = diff(y)./H;
     
-    DiagonalPrincipal = diag(2*(H(1:N-1) + H(2:N)));
-    DiagonalInferior  = diag(H(2:N-1), -1);
-    DiagonalSuperior  = diag(H(2:N-1),  1);
-    
-    A = DiagonalPrincipal + DiagonalInferior + DiagonalSuperior;
+    diagprinc = 2*(H(1:N-1)+H(2:N));
+    diagsupinf = H(2:N-1);
+    A = diag(diagprinc) + diag(diagsupinf,1) + diag(diagsupinf,-1);
     b = 6*diff(E');
     g = A\b;
     g0 = 0; gn = 0;
@@ -30,7 +28,7 @@ function [T2, T1]=SplineCubicoNatural(x, y)
         z(i,1) = "(x-" + x(i) + ")"; %#ok<AGROW> 
         
     end
-
+    
     grid on, hold off
     
     variableNames = {'i', 'x','y','h[i]', 'f[x(i),x(i+1)]', 'S"(x[i])'};
