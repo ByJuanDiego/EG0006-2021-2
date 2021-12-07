@@ -31,7 +31,7 @@ function [S] = SplineCubicoNatural(x, y, color)
     
 	grid on, hold off
     
-    variableNames1 = {'i', 'x','y','h(i) = Δx', 'f[x(i),x(i+1)] = Δy/Δx', 'S"(x)'};
+    variableNames1 = {'i', 'x','y','h(i)', 'f[x(i),x(i+1)]', 'S"(x[i])'};
     T1 = table((0:1:N)', x', y', [H nan]', [E nan]', g', VariableNames=variableNames1);
     disp(T1);
     

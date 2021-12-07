@@ -1,7 +1,8 @@
-function [Q, R, x] =  QR(A, b)
+function [Q, R] =  QRGramSchmidt(A)
     
     % Factorización QR de Gram-Schmidt;
-    
+    % Q*R = A, 
+
     [n,p] = size(A);
     Q = zeros(n,p);
     R = zeros(p,p);
@@ -34,9 +35,7 @@ function [Q, R, x] =  QR(A, b)
         Q(:,k) = Q(:,k)/R(k,k);
         fprintf("q(%d)\n", k);
         disp(Q(:,k))
-                
+        
     end
-    
-    x = linsolve(R, Q'*b);
     
 end
