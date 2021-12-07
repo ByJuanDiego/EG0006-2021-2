@@ -36,11 +36,11 @@ function [T2, T1]=SplineCubicoNatural(x, y)
     i = (0:N)';
 
     variableNames = {'i', 'x','y','h[i]', 'f[x(i),x(i+1)]', 'S"(x[i])'};
-    T1 = table(i,x',y',[H nan]',[E nan]',M',VariableNames=variableNames);
+    T1 = table(i, x', y', [H nan]', [E nan]', M', VariableNames=variableNames);
     disp(T1);
     
     variableNames = {'i','(x-x[i])','a','b','c', 'd', '[x[i], x[i+1]]'};
-    T2 = table(i(1:end-1),z,S(:,1),S(:,2),S(:,3),S(:,4),limites, VariableNames=variableNames);
+    T2 = table(i(1:end-1), z, S(:,1), S(:,2), S(:,3), S(:,4), limites, VariableNames=variableNames);
     disp(T2);
     
 end
