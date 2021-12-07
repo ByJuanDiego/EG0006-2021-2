@@ -1,4 +1,4 @@
-function [S] = SplineCubicoNatural(x, y, color)
+function [T1, T2] = SplineCubicoNatural(x, y, color)
     
     N = length(x)-1;
     H = diff(x);
@@ -29,14 +29,11 @@ function [S] = SplineCubicoNatural(x, y, color)
         
     end
     
-	grid on, hold off
-    
-    variableNames1 = {'i', 'x','y','h(i)', 'f[x(i),x(i+1)]', 'S"(x[i])'};
+    variableNames1 = {'i', 'x','y','h[i]', 'f[x(i),x(i+1)]', 'S"(x[i])'};
     T1 = table((0:1:N)', x', y', [H nan]', [E nan]', g', VariableNames=variableNames1);
-    disp(T1);
     
-    variableNames2 = {'i','(x-x(i))','a','b','c', 'd', '[x(i), x(i+1)]'};
+    variableNames2 = {'i','(x-x[i])','a','b','c', 'd', '[x(i), x(i+1)]'};
     T2 = table((0:1:N-1)',z, S(:,1),S(:,2),S(:,3),S(:,4),limites, VariableNames=variableNames2);
-    disp(T2);
     
+    hold off;
 end
