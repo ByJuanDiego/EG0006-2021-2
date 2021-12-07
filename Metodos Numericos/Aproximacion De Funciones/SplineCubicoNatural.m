@@ -31,11 +31,11 @@ function [T2, T1]=SplineCubicoNatural(x, y)
     
 	grid on, hold off
     
-    variableNames1 = {'i', 'x','y','h(i) = Δx', 'f[x(i),x(i+1)] = Δy/Δx', 'S"(x)'};
+    variableNames1 = {'i', 'x','y','h[i]', 'f[x(i),x(i+1)]', 'S"(x[i])'};
     T1 = table((0:1:N)', x', y', [H nan]', [E nan]', g', VariableNames=variableNames1);
     disp(T1);
     
-    variableNames2 = {'i','(x-x(i))','a','b','c', 'd', '[x(i), x(i+1)]'};
+    variableNames2 = {'i','(x-x[i])','a','b','c', 'd', '[x[i], x[i+1]]'};
     T2 = table((0:1:N-1)',z, S(:,1),S(:,2),S(:,3),S(:,4),limites, VariableNames=variableNames2);
     disp(T2);
     
