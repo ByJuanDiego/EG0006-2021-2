@@ -1,4 +1,6 @@
-function [z, xi] = NewtonRaphsonTOL(f, x0, Tol)
+function [T, xi] = NewtonRaphsonTOL(f, x0, Tol)
+    
+    % Fórmula: x(i+1) = x(i) - f(x(i))/f'(x(i))
     
     syms x;
     df = diff(f, x);
@@ -6,9 +8,6 @@ function [z, xi] = NewtonRaphsonTOL(f, x0, Tol)
     
     i = 0;
     z = [i x0 f(x0) df(x0) nan];
-    
-    fprintf("\nFórmula: x(i+1) = x(i) - f(x(i))/f'(x(i))\n")
-    fprintf("\n    i         x(i)      f(xi)     f'(xi)    Error\n");
     
     error = 1;
     while error > Tol
@@ -22,6 +21,8 @@ function [z, xi] = NewtonRaphsonTOL(f, x0, Tol)
         
     end
     
-    disp(z);
+    variableNames = {'i','x[i]','f(x[i])','f(1)(x[i])', 'error'};
+    T = table(z(:,1),z(:,2),z(:,3),z(:,4),z(:,5), VariableNames=variableNames);
+    disp(T);
     
 end

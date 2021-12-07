@@ -1,4 +1,4 @@
-function [z, x] = JacobiMAXITER(A, b, x0, maxIter)
+function [T, xi] = JacobiMAXITER(A, b, x0, maxIter)
     
     D = diag(diag(A));
     L = -tril(A,-1);
@@ -9,8 +9,6 @@ function [z, x] = JacobiMAXITER(A, b, x0, maxIter)
     
     if MatrizDominante(A) || RadioEspectral(Tj)
         
-        fprintf("\n    i         error     \t<xi>\n")
-
         z = [0 x0' nan];
         
         for k = 1:maxIter
@@ -20,12 +18,13 @@ function [z, x] = JacobiMAXITER(A, b, x0, maxIter)
             x0 = xi;
         end
         
-        disp(z);
-        x = xi;
-    
+        variableNames = {'i','<x[i]>','error'};
+        T = table(z(:,1),z(:,3:end),z(:,2), VariableNames=variableNames);
+        disp(T);
+        
     else
-        z = [];
-        x = [];
+        T = table();
+        xi = [];
     end
     
 end

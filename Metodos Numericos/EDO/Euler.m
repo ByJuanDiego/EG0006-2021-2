@@ -1,4 +1,6 @@
-function [z, g] = Euler(f, a, b, y0, h)
+function [T, g] = Euler(f, a, b, y0, h)
+    
+    % Fómula: y(i+1) = y(i) + h*f(x(i), y(i))
     
     syms y(x) x
     
@@ -12,10 +14,7 @@ function [z, g] = Euler(f, a, b, y0, h)
     y = y0;
     x = a;
     z = [];
-    
-    fprintf("\n\nFómula: y(i+1) = y(i) + h*f(x(i), y(i))\n\n");
-    fprintf("\n    i          xi       yi        g(xi)     Error\n");
-    
+        
     for i = 0:n 
 
         error = abs(g(x)-y);
@@ -26,6 +25,8 @@ function [z, g] = Euler(f, a, b, y0, h)
         
     end
     
-    disp(z);
+    varNames = {'i', 'x[i]', 'y[i]', 'g(x[i])', 'Error'};
+    T = table(z(:, 1), z(:, 2), z(:, 3), z(:, 4), z(:, 5), VariableNames = varNames);
+    disp(T);
     
 end

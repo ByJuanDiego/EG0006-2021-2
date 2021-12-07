@@ -13,8 +13,10 @@ function [M] = DiferenciasDivididasNewton(x,y)
     
     M=[x M];
     
-    fprintf("\n\n");
-    disp(M);
+    variableNames = {'x','f[x(i)]','f[x(i),...,x(i+k)]'};
+    T = table(M(:,1),M(:,2),M(:,3:end), VariableNames=variableNames);
+    fprintf("\n");
+    disp(T);
     
 end
 

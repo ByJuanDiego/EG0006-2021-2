@@ -1,4 +1,4 @@
-function [z, v, lambda] = PotenciaTOL(A, x0, Tol)
+function [T] = PotenciaTOL(A, x0, Tol)
 
 i = 0;
 error = 1;
@@ -17,8 +17,12 @@ while error > Tol
     
 end
 
-fprintf("\n    i        λ          Error     <v>\n")
-disp(z)
+T = table(z(:, 1), z(:, 2), z(:, 4:end), z(:, 3));
+T.Properties.VariableNames{'Var1'} = 'i';
+T.Properties.VariableNames{'Var2'} = 'eigenvalue';
+T.Properties.VariableNames{'Var3'} = 'eigenvector';
+T.Properties.VariableNames{'Var4'} = 'Error relativo';
+disp(T);
 
 end
 

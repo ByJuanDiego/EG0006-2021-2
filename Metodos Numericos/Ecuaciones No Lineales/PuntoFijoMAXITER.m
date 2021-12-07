@@ -1,18 +1,20 @@
-function [z] = PuntoFijoMAXITER(g, x0, maxIter)
+function [T, xi] = PuntoFijoMAXITER(g, x0, maxIter)
+
+    % Calcula el punto fijo (ρ) de la función g(x) tal que g(ρ)=ρ y f(ρ)=0
     
     z = [0 x0 g(x0) nan];
     
-    fprintf("\n    i         x         g(x)      error \n")
-    
-    
-    for k = 1:maxIter
-        x1 = g(x0);
-        error = abs(x1-x0);
+    for i = 1:maxIter
+        xi = g(x0);
+        error = abs(xi-x0);
         
-        z  = [z; k x1 g(x1) error]; %#ok<AGROW>
-        x0 = x1;
+        z  = [z; i xi g(xi) error]; %#ok<AGROW>
+        x0 = xi;
     end
     
-    disp(z)
+    variableNames = {'i','x[i]','g(x[i])','error'};
+    T = table(z(:,1),z(:,2),z(:,3),z(:,4),VariableNames=variableNames);
+    disp(T);
     
 end
+

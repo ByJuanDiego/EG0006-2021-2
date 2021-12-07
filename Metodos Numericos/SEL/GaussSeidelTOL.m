@@ -1,4 +1,4 @@
-function [z, x] = GaussSeidelTOL(A, b, x0, Tol)
+function [T, xi] = GaussSeidelTOL(A, b, x0, Tol)
     
     D = diag(diag(A));
     L = -tril(A,-1);
@@ -9,7 +9,6 @@ function [z, x] = GaussSeidelTOL(A, b, x0, Tol)
     
     if MatrizDominante(A) || RadioEspectral(Tgs)
         
-        fprintf("\n    i         error     \t<xi>\n")
         i = 0;
         z = [i nan x0'];
         error = 1;
@@ -22,12 +21,13 @@ function [z, x] = GaussSeidelTOL(A, b, x0, Tol)
             x0 = xi;
         end
         
-        disp(z);
-        x = xi;
+        variableNames = {'i','<x[i]>','error'};
+        T = table(z(:,1),z(:,3:end),z(:,2), VariableNames=variableNames);
+        disp(T);
     
     else
-        z = [];
-        x = [];
+        T = table();
+        xi = [];
     end
 
 end

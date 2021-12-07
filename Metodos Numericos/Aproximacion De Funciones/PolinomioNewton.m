@@ -1,14 +1,14 @@
 function [P] = PolinomioNewton(x, y)
 
-    %{    Retorna los coeficientes del polinomio interpolador de Newton
-    %}    en orden descendente
+    % Retorna los coeficientes del polinomio interpolador de Newton
+    % en orden descendente
     
     M = DiferenciasDivididasNewton(x,y);
     n = length(x);
     b = M(1,2:end);
     P = b(1);
     
-    fprintf("\n\nTérmino i=0 de la sumatoria\n\n")
+    fprintf("\nTérmino i=0 de la sumatoria\n\n")
     fprintf("b(0) = %f\n", b(1));
     
     for k=2:n

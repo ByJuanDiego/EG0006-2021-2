@@ -1,11 +1,9 @@
-function [z, c] = BiseccionMAXITER(f, a, b, maxIter)
+function [T, c] = BiseccionMAXITER(f, a, b, maxIter)
     
     c = (a+b)/2;
     error = abs((b-a)/2);
 
     z = [0 a b c f(a) f(b) f(c) error];
-    
-    fprintf("\n\n    i         a         b         c         f(a)      f(b)      f(c)      error\n")
     
     for i = 1:maxIter
 
@@ -22,6 +20,8 @@ function [z, c] = BiseccionMAXITER(f, a, b, maxIter)
         
     end
     
-    disp(z)
+    variableNames = {'i','a','b','c','f(a)','f(b)','f(c)','error'};
+    T = table(z(:,1),z(:,2),z(:,3),z(:,4),z(:,5),z(:,6),z(:,7),z(:,8),VariableNames=variableNames);
+    disp(T);
     
 end

@@ -1,4 +1,4 @@
-function [z, v, lambda] = PotenciaMAXITER(A, x0, maxIter)
+function [T] = PotenciaMAXITER(A, x0, maxIter)
 
 
 
@@ -17,8 +17,12 @@ for i=1:maxIter
     
 end
 
-fprintf("\n    i        λ          Error     <v>\n")
-disp(z)
+T = table(z(:, 1), z(:, 2), z(:, 4:end), z(:, 3));
+T.Properties.VariableNames{'Var1'} = 'i';
+T.Properties.VariableNames{'Var2'} = 'eigenvalue';
+T.Properties.VariableNames{'Var3'} = 'eigenvector';
+T.Properties.VariableNames{'Var4'} = 'error relativo';
+disp(T);
 
 end
 

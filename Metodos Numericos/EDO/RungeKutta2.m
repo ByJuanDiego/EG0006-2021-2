@@ -1,8 +1,14 @@
-function [z, g] = RungeKutta2(f, a, b, y0, h, metodo)
+function [T, g] = RungeKutta2(f, a, b, y0, h, metodo)
     
-    %{ Función que calcula la tabla de Runge Kutta de segundo orden (z)
-    %  utilizando los métodos de Heun, Ralston o Punto Medio
-    %} y la solución de la ecuación diferencial de primer orden (g). 
+    %{
+        Función que calcula la tabla de Runge Kutta de segundo orden (z)
+        utilizando los métodos de Heun, Ralston o Punto Medio
+        y la solución de la ecuación diferencial de primer orden (g).
+
+        Fórmula: y(i+1) = y(i) + h(a1*K1(i) + a2*K2(i))
+        K1(i) = f(x(i), y(i))
+        K2(i) = f(x(i)+p1*h, y(i)+q11*K1(i)*h)
+    %}
     
     syms y(x) x
     y(x) = dsolve(diff(y,x)==f(x,y), y(a)==y0); %#ok<NODEF>
@@ -30,26 +36,22 @@ function [z, g] = RungeKutta2(f, a, b, y0, h, metodo)
     x = a;
     z = [];
     
-    fprintf("\nFórmula: y(i+1) = y(i) + h(%s*K1(i) + %s*K2(i))\n\n", string(a1), string(a2))
-    fprintf("K1(i) = f(x(i), y(i))\n")
-    fprintf("K2(i) = f(x(i)+%s*h, y(i)+%s*K1(i)*h)\n", string(p1), string(q11))
-    
-    fprintf("\n    i         x(i)      y(i)      g(x(i))   Error    K1(i)     K2(i)\n")
-    
     for i = 0:n
         
         K1 = f(x     , y);
         K2 = f(x+p1*h, y+q11*K1*h);
         
         error = abs(g(x)-y);
-        z = [z; i x y g(x) error K1 K2]; %#ok<AGROW>
+        z = [z; i x y g(x) K1 K2 error]; %#ok<AGROW>
         
         y = y + h*(a1*K1 + a2*K2);
         x = x + h;
         
     end
     
-    disp(z);
+    varNames = {'i', 'x[i]', 'y[i]', 'g(x[i])', 'K1', 'K2', 'Error'};
+    T = table(z(:,1),z(:,2),z(:,3),z(:,4),z(:,5),z(:,6),z(:,7), VariableNames = varNames);
+    disp(T);
     
 end
 
