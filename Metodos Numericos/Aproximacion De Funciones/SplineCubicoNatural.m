@@ -32,9 +32,8 @@ function [T2, T1]=SplineCubicoNatural(x, y)
     end
     
     grid on, hold off
-
     i = (0:N)';
-
+    
     variableNames = {'i', 'x','y','h[i]', 'f[x(i),x(i+1)]', 'S"(x[i])'};
     T1 = table(i, x', y', [H nan]', [E nan]', M', VariableNames=variableNames);
     disp(T1);
