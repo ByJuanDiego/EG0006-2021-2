@@ -1,4 +1,4 @@
-function [T, g] = RungeKutta2(f, g, a, b, x0, y0, h)
+function [T] = RungeKutta2(f, g, a, b, x0, y0, h)
     
     %
     % Función que calcula los valores de x(b) & y(b) con un paso (h)
