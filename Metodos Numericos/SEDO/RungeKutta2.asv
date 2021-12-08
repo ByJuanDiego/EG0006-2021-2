@@ -1,10 +1,9 @@
 function [T, g] = RungeKutta2(f, g, a, b, x0, y0, h)
     
-    %
-    % Función que calcula los valores de x(b) & y(b) con un paso (h)
+    % Función que calcula los vx(b) y y(b)
     % 
-    % dx/dt = f(t, x, y);   x(a) = x0
-    % dy/dt = g(t, x, y);   y(a) = y0
+    % dx/dt = f(t, x, y); x(a) = x0
+    % dy/dt = g(t, x, y); y(a) = y0
     % 
     % x(i+1) = x(i) + h/2*(K1x(i) + K2x(i)) 
     % y(i+1) = y(i) + h/2*(K1y(i) + K2y(i))
