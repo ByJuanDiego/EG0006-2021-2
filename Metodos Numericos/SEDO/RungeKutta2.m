@@ -37,7 +37,7 @@ function [T] = RungeKutta2(f, g, a, b, x0, y0, h)
         
     end
     
-    varNames = {'i', 't[i]','x[i]', 'y[i]', 'K1x', 'K1y', 'K2x', 'K2y'};
+    varNames = {'i', 't[i]','x(t[i])', 'y(t([i])', 'K1x', 'K1y', 'K2x', 'K2y'};
     T = array2table(z, VariableNames=varNames);
     disp(T);
     
