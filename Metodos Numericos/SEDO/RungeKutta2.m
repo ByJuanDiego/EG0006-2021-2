@@ -10,7 +10,7 @@ function [T] = RungeKutta2(f, g, a, b, x0, y0, h)
     % y(i+1) = y(i) + h/2*(K1y(i) + K2y(i))
     % 
     % K1x(i) = f(t(i), x(i), y(i))
-    % K2x(i) = g(t(i), x(i), y(i))
+    % K1y(i) = g(t(i), x(i), y(i))
     % 
     % K2x(i) = f(t(i) + h, x(i) + h*K1x(i), y(i) + h*K1y(i));
     % K2y(i) = g(t(i) + h, x(i) + h*K1x(i), y(i) + h*K1y(i));
