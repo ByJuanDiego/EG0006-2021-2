@@ -1,12 +1,17 @@
 function [T, g] = RungeKutta2(f, a, b, y0, h, metodo)
     
-    %Función que calcula la tabla de Runge Kutta de segundo orden (z)
+    %
+    %Función que calcula la tabla de Runge Kutta de segundo orden (T)
     %utilizando los métodos de Heun, Ralston o Punto Medio
-    %y la solución de la ecuación diferencial de primer orden (g).
+    %y la solución de la ecuación diferencial de primer orden (g(x)).
+    %
+    %dy/dx = f(x,y)
+    %y(a) = y0; 
+    %y(x) = g(x);
+    %
     %Fórmula: y(i+1) = y(i) + h(a1*K1(i) + a2*K2(i))
     %K1(i) = f(x(i), y(i))
     %K2(i) = f(x(i)+p1*h, y(i)+q11*K1(i)*h)
-    
     
     syms y(x) x
     y(x) = dsolve(diff(y,x)==f(x,y), y(a)==y0); %#ok<NODEF>
