@@ -24,4 +24,7 @@ function [T, c] = BiseccionTOL(f, a, b, Tol)
     T = table(z(:,1),z(:,2),z(:,3),z(:,4),z(:,5),z(:,6),z(:,7),z(:,8),VariableNames=variableNames);
     disp(T);
     
+    
+
 end
+

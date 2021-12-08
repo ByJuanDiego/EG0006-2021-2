@@ -1,6 +1,6 @@
 function [T, g] = RungeKutta2(f, a, b, y0, h, metodo)
     
-    %
+    % 
     % Función que calcula la tabla de Runge Kutta de segundo orden (T)
     % utilizando los métodos de Heun, Ralston o Punto Medio
     % y la solución de la ecuación diferencial de primer orden (g(x)).
