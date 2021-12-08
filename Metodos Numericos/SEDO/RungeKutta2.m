@@ -1,6 +1,6 @@
 function [T] = RungeKutta2(f, g, a, b, x0, y0, h)
     
-    %
+    % 
     % Función que calcula los valores de x(b) & y(b) con un paso (h)
     % 
     % dx/dt = f(t, x, y);   x(a) = x0
