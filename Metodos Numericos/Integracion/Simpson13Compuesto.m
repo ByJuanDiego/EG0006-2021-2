@@ -13,6 +13,6 @@ function [Isc, I, Error] = Simpson13Compuesto(f, a, b, N)
     I = int(f(x), a, b);
     I = round(I, 6);
     Error = round(abs(I-Isc), 6);
-
+    
 end
 
