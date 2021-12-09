@@ -1,6 +1,5 @@
 function [P] = PolinomioLagrange(x, y)
     
-    
     n = length(x);
     P = zeros(1,n);
     
@@ -11,10 +10,10 @@ function [P] = PolinomioLagrange(x, y)
         
         fprintf("\n\nTérmino %d de la sumatoria\n\n\n", k-1)
         
-        fprintf('Los xi del denominador Π(x-xi): \n');
+        fprintf('Los xi del numerador Π(x-xi): \n');
         disp(x([1:k-1,k+1:n])');
         
-        fprintf('El xk del numerador Π(xk-xi): \n');
+        fprintf('El xk del denominador Π(xk-xi): \n');
         disp(x(k));
         
         fprintf('La productoria del numerador\n')
