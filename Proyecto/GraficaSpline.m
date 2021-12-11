@@ -3,7 +3,7 @@ function [t, T, T1, T2] = GraficaSpline(T, hora, grado)
     T = T(hora:24:end);
     t = (0:1:length(T)-1);
     
-    P = QRGramSchmidt(t, T, grado);
+    P = QRGramSchmidt(t, T, grado); % Polinomio de Mínimos cuadrados resuelto por QR
     
     tt = linspace(0, length(t)-1, 1000);
     Pt = polyval(P, tt);
