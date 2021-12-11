@@ -1,4 +1,4 @@
-function [t, T, T1, T2] = GraficaSpline(T, hora, grado)
+function [t, T, T2, P] = GraficaSpline(T, hora, grado)
     
     T = T(hora:24:end);
     t = (0:1:length(T)-1);
@@ -16,7 +16,7 @@ function [t, T, T1, T2] = GraficaSpline(T, hora, grado)
     plot(tt, Pt, "Color", '#A2142F', "LineWidth", 1.5)
     
     % Gráfica del Spline Cúbico Natural
-    [T1, T2] = SplineCubicoNatural(t, T, '#0072BD');
+    [~, T2] = SplineCubicoNatural(t, T, '#0072BD');
     
     xlim([min(t)     max(t)    ])
     ylim([3/4*min(T) 5/4*max(T)])
