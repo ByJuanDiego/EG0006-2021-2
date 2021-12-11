@@ -1,4 +1,4 @@
-function [] = GraficaConDiciembre(T, hora, P, grado)
+function [] = GraficaConDiciembre(T, hora, P, grado, dias)
     
     TDiciembre = readmatrix('diciembre.csv','Range','C12:C263')';
     TDiciembre = TDiciembre(hora:24:end);
@@ -10,7 +10,7 @@ function [] = GraficaConDiciembre(T, hora, P, grado)
     plot(ttotal, TTotal, 'or', "Color", '#D95319', "LineWidth", 1)
     hold on; grid on;
     
-    tt = linspace(0, 31, 100);
+    tt = linspace(0, 29+dias, 100);
     TT = polyval(P, tt);
     
     % Graficando el polinomio aproximante
