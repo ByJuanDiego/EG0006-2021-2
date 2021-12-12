@@ -1,4 +1,4 @@
-function [] = GraficaConDiciembre(TNovHora, TDicHora, hora, P, grado, dias)
+function [] = GraficaConDiciembre(TNovHora, TDicHora, hora, P, grado, cant_dias)
         
     tNovHora = (0:1:29);
     tDicHora = (30:1:29+length(TDicHora));
@@ -10,7 +10,7 @@ function [] = GraficaConDiciembre(TNovHora, TDicHora, hora, P, grado, dias)
     % Graficando los puntos de la data de diciembre
     plot(tDicHora, TDicHora, 'o', "LineWidth", 1, Color='#0072BD')
     
-    tt = linspace(0, 29+dias, 100);
+    tt = linspace(0, 29+cant_dias, 100);
     TT = polyval(P, tt);
     
     % Graficando el polinomio aproximante
