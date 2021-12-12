@@ -1,27 +1,28 @@
-function [] = GraficaConDiciembre(T, hora, P, grado, dias)
+function [] = GraficaConDiciembre(TNovHora, TDicHora, hora, P, grado, dias)
+        
+    tNovHora = (0:1:29);
+    tDicHora = (30:1:29+length(TDicHora));
     
-    TDiciembre = readmatrix('diciembre.csv','Range','C12:C263')';
-    TDiciembre = TDiciembre(hora:24:end);
-    
-    TTotal = [T TDiciembre];
-    ttotal = (0:1:length(TTotal)-1);
-    
-    % Graficando los puntos de la data
-    plot(ttotal, TTotal, 'or', "Color", '#D95319', "LineWidth", 1)
+    % Graficando los puntos de la data de noviembre
+    plot(tNovHora, TNovHora, 'o', "LineWidth", 1, Color='#D95319')
     hold on; grid on;
+    
+    % Graficando los puntos de la data de diciembre
+    plot(tDicHora, TDicHora, 'o', "LineWidth", 1, Color='#0072BD')
     
     tt = linspace(0, 29+dias, 100);
     TT = polyval(P, tt);
     
     % Graficando el polinomio aproximante
-    plot(tt, TT, 'b', "Color", '#A2142F', "LineWidth", 1.5);
+    plot(tt, TT, "LineWidth", 1.5, Color='#7E2F8E');
     
     title(...
         "Gráfica Temperatura vs Tiempo " + int2str(hora-1) + " hrs (primeros días de diciembre)", ...
         "FontSize", 17, "FontName", "Times New Roman")
-
+    
     legend(...
-        "Data", ...
+        "Data Noviembre", ...
+        "Data Diciembre", ...
         "Polinomio de grado "+int2str(grado),...
         "Location", "best", ...
         "FontSize", 13, ...
@@ -29,8 +30,10 @@ function [] = GraficaConDiciembre(T, hora, P, grado, dias)
     
     hold off;
     
-    xlim([min(tt)     max(tt)    ])
-    ylim([3/4*min(T) 5/4*max(T)])
-
+    tTotal = [tNovHora tDicHora];
+    TTotal = [TNovHora TDicHora];
+    xlim([min(tTotal)        max(tTotal)])
+    ylim([3/4*min(TTotal) 5/4*max(TTotal)])
+    
 end
 
