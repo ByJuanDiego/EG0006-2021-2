@@ -24,15 +24,15 @@ function [T1, T2] = SplineCubicoNatural(x, y, color)
         yy = S(i,1)*(xx - x(i)).^3 + S(i,2)*(xx - x(i)).^2 + S(i,3)*(xx - x(i)) + S(i,4);
         plot(xx, yy, "Color", color, "LineWidth", 1.5), hold on
         
-        limites(i,1) = "si x ∈ [" + num2str(x(i))+ ", " + num2str(x(i+1)) + "]"; %#ok<AGROW> 
-        z(i,1) = "(x-" + x(i) + ")"; %#ok<AGROW> 
+        limites(i,1) = "si t ∈ [" + num2str(x(i))+ ", " + num2str(x(i+1)) + "]"; %#ok<AGROW> 
+        z(i,1) = "(t-" + x(i) + ")"; %#ok<AGROW> 
         
     end
     
-    variableNames1 = {'i', 'x','y','h[i]', 'f[x(i),x(i+1)]', 'S"(x[i])'};
+    variableNames1 = {'i', 't','T','h[i]', 'f[t(i),t(i+1)]', 'S"(t[i])'};
     T1 = table((0:1:N)', x', y', [H nan]', [E nan]', g', VariableNames=variableNames1);
     
-    variableNames2 = {'i','(x-x[i])','a','b','c', 'd', '[x(i), x(i+1)]'};
+    variableNames2 = {'i','(t-t[i])','a','b','c', 'd', '[t(i), t(i+1)]'};
     T2 = table((0:1:N-1)',z, S(:,1),S(:,2),S(:,3),S(:,4),limites, VariableNames=variableNames2);
     
     hold off;

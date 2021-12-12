@@ -30,10 +30,10 @@ function [] = GraficaConDiciembre(TNovHora, TDicHora, hora, P, grado, cant_dias)
     
     hold off;
     
-    %tTotal = [tNovHora tDicHora];
-    %TTotal = [TNovHora TDicHora];
-    %xlim([min(tTotal)        max(tTotal)])
-    %ylim([3/4*min(TTotal) 5/4*max(TTotal)])
+    tTotal = [tNovHora tDicHora];
+    TTotal = [TNovHora TDicHora];
+    xlim([min(tTotal)        max(tTotal)])
+    ylim([3/4*min(TTotal) 5/4*max(TTotal)])
     
 end
 
