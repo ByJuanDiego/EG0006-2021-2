@@ -1,8 +1,12 @@
 function [] = GraficaConDiciembre(TNovHora, TDicHora, hora, P, grado, cant_dias)
-        
-    tNovHora = (0:1:29);
-    tDicHora = (30:1:29+length(TDicHora));
     
+    if hora == 24
+        tNovHora = (0:1:28);
+    else
+        tNovHora = (0:1:29);
+    end
+    
+    tDicHora = (30:1:29+length(TDicHora));
     % Graficando los puntos de la data de noviembre
     plot(tNovHora, TNovHora, 'o', "LineWidth", 1, Color='#D95319')
     hold on; grid on;
