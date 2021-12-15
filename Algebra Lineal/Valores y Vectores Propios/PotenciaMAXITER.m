@@ -1,5 +1,16 @@
 function [T] = PotenciaMAXITER(A, x0, maxIter)
     
+    % Converge al valor propio dominante (λ):
+    % 
+    % A*x = λ*x
+    % A*x - λ*x = 0
+    % A - λ*I = 0
+    % 
+    % y al vector propio dominante (v)
+    % 
+    % A*v = λ*v
+    %
+    
     z = [0 nan nan x0'];
     
     for i=1:maxIter

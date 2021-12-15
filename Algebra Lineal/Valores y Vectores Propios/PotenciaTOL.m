@@ -1,4 +1,15 @@
-function [T] = PotenciaTOL(A, x0, Tol)
+function [T, lambda, v] = PotenciaTOL(A, x0, Tol)
+    
+    % Converge al valor propio dominante (λ):
+    % 
+    % A*x = λ*x
+    % A*x - λ*x = 0
+    % A - λ*I = 0
+    % 
+    % y al vector propio dominante (v)
+    % 
+    % A*v = λ*v
+    %
     
     i = 0;
     error = 1;
@@ -18,7 +29,7 @@ function [T] = PotenciaTOL(A, x0, Tol)
     end
     
     varNames = {'i', 'eigenvalue', 'eigenvector', 'error'};
-    T = table(z(:,1),z(:,2),z(:,4:end),z(:,3), VariableNames=varNames);
+    T = table(z(:,1), z(:,2), z(:,4:end), z(:,3), VariableNames=varNames);
     disp(T);
     
 end
