@@ -1,14 +1,14 @@
-function [T, lambda, v] = PotenciaMAXITER(A, x0, maxIter)
+function [T, eigval, eigvec] = PotenciaMAXITER(A, x0, maxIter)
     
-    % Converge al valor propio dominante (λ):
+    % Converge al valor propio dominante (eigval):
     % 
-    % A*x = λ*x
-    % A*x - λ*x = 0
-    % A - λ*I = 0
+    % A*x = eigval*x
+    % A*x - eigval*x = 0
+    % A - eigval*I = 0
     % 
-    % y al vector propio dominante (v)
+    % y al vector propio dominante (eigvec)
     % 
-    % A*v = λ*v
+    % A*eigvec = eigval*eigvec
     %
     
     z = [0 nan nan x0'];
@@ -17,12 +17,12 @@ function [T, lambda, v] = PotenciaMAXITER(A, x0, maxIter)
         
         xi = A*x0;
         [~, k] = max(abs(xi));
-        lambda = xi(k);
-        v = (1/lambda)*xi;
+        eigval = xi(k);
+        eigvec = (1/eigval)*xi;
         
-        error = norm(v - x0)/norm(v);
-        z = [z; i lambda error v']; %#ok<AGROW> 
-        x0 = v;
+        error = norm(eigvec - x0)/norm(eigvec);
+        z = [z; i eigval error eigvec']; %#ok<AGROW> 
+        x0 = eigvec;
         
     end
     
