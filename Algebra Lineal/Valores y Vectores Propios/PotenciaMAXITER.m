@@ -1,4 +1,4 @@
-function [T] = PotenciaMAXITER(A, x0, maxIter)
+function [T, lambda, v] = PotenciaMAXITER(A, x0, maxIter)
     
     % Converge al valor propio dominante (λ):
     % 
