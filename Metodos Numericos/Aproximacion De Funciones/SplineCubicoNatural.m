@@ -1,5 +1,9 @@
 function [T2, T1]=SplineCubicoNatural(x, y)
     
+    plot(x, y, '*', 'Color', '#A2142F', 'LineWidth', 3)
+    grid on; hold on;
+    title('$Natural\,Cubic\,Spline$', 'Interpreter','latex', 'FontSize', 18)
+    
     N = length(x)-1;
     H = diff(x);
     E = diff(y)./H;
@@ -24,7 +28,7 @@ function [T2, T1]=SplineCubicoNatural(x, y)
         
         xx = linspace(x(i), x(i+1));
         yy = S(i,1)*(xx - x(i)).^3 + S(i,2)*(xx - x(i)).^2 + S(i,3)*(xx - x(i)) + S(i,4);
-        plot(xx, yy), hold on
+        plot(xx, yy, LineWidth=2)
         
         limites(i,1) = "si x ∈ [" + num2str(x(i))+ ", " + num2str(x(i+1)) + "]"; %#ok<AGROW> 
         z(i,1) = "(x-" + x(i) + ")"; %#ok<AGROW> 
