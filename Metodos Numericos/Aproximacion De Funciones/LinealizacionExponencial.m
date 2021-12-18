@@ -1,5 +1,7 @@
-function [g, A, B] = LinealizacionExponencial(x, y)
+function [A, B] = LinealizacionExponencial(x, y)
     
+    % Función que calcula los coeficientes (A) y (B)
+    % de un ajuste exponencial
     % 
     % y = A*exp(B*x)
     % ln(y) = ln(A) + B*x
@@ -20,8 +22,6 @@ function [g, A, B] = LinealizacionExponencial(x, y)
     D = E(1);
     A = exp(D);
     B = E(2);
-    
-    g = @(x) (A.*exp(B.*x)); 
     
 end
 
