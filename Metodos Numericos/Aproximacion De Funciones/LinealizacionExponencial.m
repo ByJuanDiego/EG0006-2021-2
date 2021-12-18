@@ -18,7 +18,7 @@ function [A, B] = LinealizacionExponencial(x, y)
     % Sistema de ecuaciones lineales de la forma
     % M*E = C
     
-    [E] = linsolve(M, C);
+    [E] = M\C;
     D = E(1);
     A = exp(D);
     B = E(2);
