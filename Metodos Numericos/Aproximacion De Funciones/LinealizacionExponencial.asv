@@ -19,7 +19,7 @@ function [A, B] = LinealizacionExponencial(x, y)
     % M*E = C
     
     [E] = M\C;
-    
+
     D = E(1);
     B = E(2);
     
