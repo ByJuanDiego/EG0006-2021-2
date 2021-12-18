@@ -1,5 +1,5 @@
-function [bool] = RadioEspectral(T)
-
+function [bool, rho] = RadioEspectral(T)
+    
     rho = max(abs(eig(T))); %radio espectral
     
     if rho < 1
@@ -9,5 +9,5 @@ function [bool] = RadioEspectral(T)
         bool = false;
         fprintf("ρ(T) ≥ 1, por lo que el método no es convergente\n")
     end
-
+    
 end
