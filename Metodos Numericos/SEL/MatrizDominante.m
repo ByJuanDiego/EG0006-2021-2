@@ -1,5 +1,7 @@
 function [bool] = MatrizDominante(A)
     
+    % Función que verifica si una matriz (A) es estrictamente dominante.
+    
     bool = true;
     [n] = size(A);
     

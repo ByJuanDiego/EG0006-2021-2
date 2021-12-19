@@ -1,6 +1,9 @@
 function [bool, rho] = RadioEspectral(T)
     
-    rho = max(abs(eig(T))); %radio espectral
+    % Función que calcula el radio espectral (rho) de una matriz (T) e
+    % indica si los métodos de Jacobi y Gauss-Seidel son convergentes o no.
+    
+    rho = max(abs(eig(T)));
     
     if rho < 1
         bool = true;
