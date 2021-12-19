@@ -5,8 +5,8 @@ function [bool] = MatrizDominante(A)
     bool = true;
     [n] = size(A);
     
-    for k=1:n
-        if abs(A(k,k)) <= sum(abs(A(k, [1:k-1, k+1:n])))
+    for i=1:n
+        if abs(A(i,i)) <= sum(abs(A(i, [1:i-1, i+1:n])))
             bool = false;
             break;
         end
