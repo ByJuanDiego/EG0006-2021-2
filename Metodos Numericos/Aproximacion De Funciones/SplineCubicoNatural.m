@@ -1,5 +1,22 @@
 function [T2, T1]=SplineCubicoNatural(x, y)
     
+    % Función que calcula el spline cúbico natural (S) de una serie de puntos
+    % (x[i]), (y[i]) ∀ i = {0, 1, ..., N} mediante N polinomios de grado máximo 3
+    % que describen el spline a trozos.
+    % 
+    %
+    % • Condición de interpolación: 
+    % S(x[i]) = y[i] ∀ i = {0, 1, ..., N}
+    %
+    % • Condición de continuidad:
+    % S[i-1](x[i]) = S[i](x[i]) ∀ i = {1, ..., N-1}
+    % 
+    % • Condición de suavidad:      
+    % S'[i-1](x[i]) = S'[i](x[i]) ∀ i = {1, ..., N-1}
+    % 
+    % • Condición de Spline Cubico Natural: 
+    % S"(x[0]) = 0 & S"(x[N]) = 0
+    
     plot(x, y, '*', 'Color', '#A2142F', 'LineWidth', 3)
     grid on; hold on;
     title('$Natural\,Cubic\,Spline$', 'Interpreter','latex', 'FontSize', 18)

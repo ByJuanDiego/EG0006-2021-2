@@ -1,11 +1,12 @@
 function [A, B] = LinealizacionExponencial(x, y)
     
     % Función que calcula los coeficientes (A) y (B)
-    % de un ajuste exponencial
+    % de un ajuste exponencial tal que
+    % y = A*e^(B*x)
     % 
-    % y = A*exp(B*x)
+    % Linealizando la función:
     % ln(y) = ln(A) + B*x
-    % 
+    %      ↓
     % ln(y) = C, ln(A) = D
     % 
     % C = B*x + D

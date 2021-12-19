@@ -1,8 +1,9 @@
 function [Q, R] =  QRGramSchmidt(A)
     
     % Factorización QR de Gram-Schmidt;
-    % Q*R = A, 
-
+    % Q*R = A
+    % Q^(t) = Q^(-1)
+    
     [n,p] = size(A);
     Q = zeros(n,p);
     R = zeros(p,p);

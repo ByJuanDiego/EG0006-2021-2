@@ -1,5 +1,10 @@
 function [T, c] = BiseccionTOL(f, a, b, Tol)
     
+    % Calcula la solución (c) de la ecuación f(x)=0 tal que f(c)=0
+    % Antes de llamar a la función se debe verificar que:
+    % • a < b
+    % • f(a)*f(b) < 0
+    
     c = (a+b)/2;
     error = abs(b-a)/2;
     i = 0;
