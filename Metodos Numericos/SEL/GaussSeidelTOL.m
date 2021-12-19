@@ -16,7 +16,7 @@ function [T, xi] = GaussSeidelTOL(A, b, x0, Tol)
         while error > Tol
             xi = Tgs * x0 + cgs;
             i = i + 1;
-            error = norm(xi - x0)/norm(xi);
+            error = norm(xi - x0, Inf)/norm(xi, Inf);
             z = [z; i error xi']; %#ok<AGROW> 
             x0 = xi;
         end

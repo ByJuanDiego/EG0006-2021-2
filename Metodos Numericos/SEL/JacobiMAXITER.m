@@ -13,7 +13,7 @@ function [T, xi] = JacobiMAXITER(A, b, x0, maxIter)
         
         for k = 1:maxIter
             xi = Tj * x0 + cj;
-            error = norm(xi - x0)/norm(xi);
+            error = norm(xi - x0, Inf)/norm(xi, Inf);
             z = [z; k error xi']; %#ok<AGROW> 
             x0 = xi;
         end
