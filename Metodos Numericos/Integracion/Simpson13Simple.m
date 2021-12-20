@@ -1,6 +1,6 @@
 function [Iss, I, Error] = Simpson13Simple(f, a, b)
     % Iss = (h/3) * (f(a) + 4*f(c) + f(b))
-    % I = Iss - [1/90 * d^4f(x)/dx^4(ξ) * h^5], ξ ∈ [a, b]
+    % I = Iss - [(h^5)/90 * d^4f(x)/dx^4(ξ)], ξ ∈ [a, b]
     
     h = (b-a)/2;
     c = (a+b)/2;

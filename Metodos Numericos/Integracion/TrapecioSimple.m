@@ -1,6 +1,6 @@
 function [Its, I, Error] = TrapecioSimple(f, a, b)
     % Its = (h/2) * (f(a) + f(b))
-    % I = Its - {[(b-a)^3]/12 * f"(ξ)}, ξ ∈ [a, b]
+    % I = Its - [(h^3)/12 * f"(ξ)], ξ ∈ [a, b]
     
     h = (b-a);
     
