@@ -1,5 +1,6 @@
 function [Itc, I, Error] = TrapecioCompuesto(f, a, b, N)
     % Itc = (h/2) * (f(a) + 2*Σ(f(xi)) + f(b))
+    % I = Itc - [(b-a)/12 * f"(ξ) * h^2], ξ ∈ [a, b]
     
     h = (b-a)/N;
     x = (a:h:b);

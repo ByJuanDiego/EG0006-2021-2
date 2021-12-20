@@ -1,5 +1,6 @@
 function [Isc, I, Error] = Simpson13Compuesto(f, a, b, N)
     % Isc = (h/3) * (y(a) + 4*Σ(imp) + 2*Σ(par) + y(b))
+    % I = Isc - [(b-a)/180 * d^4f(x)/dx^4(ξ) * h^4], ξ ∈ [a, b]
     
     h = (b-a)/N;
     x = (a:h:b);
